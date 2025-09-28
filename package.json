@@ -1,0 +1,115 @@
+{
+  "name": "kement",
+  "version": "1.0.0",
+  "description": "Modern SSH Terminal for Linux - A comprehensive SSH client with terminal, SFTP, and advanced multi-server management features",
+  "main": "main.js",
+  "homepage": "https://github.com/enisgetmez/Kement",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enisgetmez/Kement.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enisgetmez/Kement/issues"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "package": "electron-builder",
+    "dist": "electron-builder --publish=never",
+    "dist:linux": "electron-builder --linux --publish=never",
+    "dist:appimage": "electron-builder --linux AppImage --publish=never",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/ build/",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "ssh",
+    "terminal",
+    "sftp", 
+    "electron",
+    "linux",
+    "cyberpunk",
+    "multi-terminal",
+    "server-management",
+    "remote-access"
+  ],
+  "author": {
+    "name": "Enis",
+    "email": "enis@enisgetmez.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "build": {
+    "appId": "com.enisgetmez.kement",
+    "productName": "KEMENT",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "dist/",
+      "main.js",
+      "src/services/",
+      "assets/",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "Network",
+      "icon": "assets/kement.png",
+      "desktop": {
+        "Name": "KEMENT",
+        "Comment": "Modern SSH Terminal for Linux",
+        "Keywords": "SSH;Terminal;SFTP;Server;Remote;"
+      }
+    },
+    "appImage": {
+      "license": "LICENSE"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3", 
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "css-loader": "^7.1.2",
+    "electron": "^38.2.0",
+    "electron-builder": "^25.0.5",
+    "html-webpack-plugin": "^5.6.4",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0", 
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "electron-store": "^8.1.0",
+    "monaco-editor": "^0.53.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "ssh2": "^1.17.0",
+    "ssh2-sftp-client": "^12.0.1",
+    "styled-components": "^6.1.19"
+  }
+}
