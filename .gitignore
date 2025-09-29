@@ -1,0 +1,154 @@
+# Dependencies# Dependencies
+
+node_modules/node_modules/
+
+npm-debug.log*npm-debug.log*
+
+yarn-debug.log*yarn-debug.log*
+
+yarn-error.log*yarn-error.log*
+
+
+
+# Build outputs# Build outputs
+
+dist/dist/
+
+build/build/
+
+release/*.tgz
+
+*.tar.gz
+
+# Electron
+
+*.AppImage# Environment files
+
+*.dmg.env
+
+*.exe.env.local
+
+*.snap.env.development.local
+
+.env.test.local
+
+# Environment files.env.production.local
+
+.env
+
+.env.local# IDE files
+
+.env.development.local.vscode/
+
+.env.test.local.idea/
+
+.env.production.local*.swp
+
+*.swo
+
+# IDE files*~
+
+.vscode/
+
+.idea/# OS generated files
+
+*.swp.DS_Store
+
+*.swo.DS_Store?
+
+*~._*
+
+.Spotlight-V100
+
+# OS files.Trashes
+
+.DS_Storeehthumbs.db
+
+.DS_Store?Thumbs.db
+
+._*
+
+.Spotlight-V100# Electron specific
+
+.Trashes*.dmg
+
+ehthumbs.db*.pkg
+
+Thumbs.db*.deb
+
+*.rpm
+
+# Logs*.AppImage
+
+logs*.exe
+
+*.log*.msi
+
+
+
+# Runtime data# Logs
+
+pidslogs/
+
+*.pid*.log
+
+*.seed
+
+*.pid.lock# Runtime data
+
+pids/
+
+# Coverage directory used by tools like istanbul*.pid
+
+coverage/*.seed
+
+.nyc_output*.pid.lock
+
+
+
+# Dependency directories# Coverage directory used by tools like istanbul
+
+jspm_packages/coverage/
+
+
+
+# Optional npm cache directory# nyc test coverage
+
+.npm.nyc_output/
+
+
+
+# Optional REPL history# Temporary folders
+
+.node_repl_historytmp/
+
+temp/
+
+# Output of 'npm pack'
+
+*.tgz# SSH Keys (security)
+
+*.pem
+
+# Yarn Integrity file*.key
+
+.yarn-integrityid_rsa*
+
+id_ecdsa*
+
+# Config files with sensitive dataid_ed25519*
+
+config.json
+
+.electron-store/# User data
+
+connections.json
+
+# Temporary filesuser-data/
+
+tmp/config/
+
+temp/
+# Development files
+.eslintcache
+*.tsbuildinfo

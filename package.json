@@ -1,0 +1,92 @@
+{
+  "name": "kement",
+  "version": "2.0.0",
+  "description": "KEMENT - AI-Powered SSH Terminal with modern cyberpunk design",
+  "main": "main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "electron .",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "dist": "npm run build && electron-builder",
+    "dist:linux": "npm run build && electron-builder --linux",
+    "dist:appimage": "npm run build && electron-builder --linux AppImage",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ssh",
+    "terminal",
+    "sftp",
+    "electron"
+  ],
+  "author": "Enis",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "css-loader": "^7.1.2",
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12",
+    "html-webpack-plugin": "^5.6.4",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "electron-store": "^8.1.0",
+    "monaco-editor": "^0.53.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "ssh2": "^1.17.0",
+    "ssh2-sftp-client": "^12.0.1",
+    "styled-components": "^6.1.19"
+  },
+  "build": {
+    "appId": "app.kement.ssh-terminal",
+    "productName": "KEMENT",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "package.json",
+      "assets/**/*",
+      {
+        "from": "node_modules",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "extraResources": [
+      {
+        "from": "assets",
+        "to": "assets"
+      }
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "Network",
+      "maintainer": "Enis Getmez <contact@kement.app>",
+      "synopsis": "AI-Powered SSH Terminal"
+    },
+    "appImage": {
+      "license": "LICENSE"
+    }
+  }
+}

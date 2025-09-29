@@ -1,0 +1,127 @@
+/* Cyberpunk Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Cyberpunk Color Palette */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --neon-green: #00ff88;
+  --neon-blue: #0066ff;
+  --neon-purple: #aa00ff;
+  --neon-pink: #ff0066;
+  --neon-cyan: #00ffff;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #606060;
+  --border-color: #333333;
+  --border-neon: #00ff88;
+  --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.3);
+  --gradient-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --gradient-neon: linear-gradient(90deg, #00ff88, #0066ff);
+}
+
+body {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-green);
+  border-radius: 4px;
+  box-shadow: var(--shadow-neon);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 255, 136, 0.3);
+  color: var(--text-primary);
+}
+
+/* Focus indicators */
+*:focus {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--neon-green);
+  }
+  50% { 
+    box-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Utility Classes */
+.text-neon {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.bg-gradient {
+  background: var(--gradient-primary);
+}
+
+.border-neon {
+  border: 1px solid var(--neon-green);
+  box-shadow: var(--shadow-neon);
+}
+
+.hover-glow:hover {
+  animation: glow 2s infinite;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
